@@ -64,12 +64,12 @@ variable "master_ipv4_cidr_block" {
   type = string
 }
 
-variable "cluster_ipv4_cidr_block" {
+variable "cluster_secondary_range_name" {
   description = "The name of the secondary range for the GKE cluster"
   type = string
 }
 
-variable "services_ipv4_cidr_block" {
+variable "services_secondary_range_name" {
   description = "The name of the secondary range for the GKE services"
   type = string
 }

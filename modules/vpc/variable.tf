@@ -18,17 +18,13 @@ variable "subnet_name" {
   type = string
 }
 
-variable "subnet_ip_cidr_range" {
-  description = "Subnet IP"
+variable "cluster_secondary_range_name" {
+  description = "The name of the secondary range for the GKE cluster"
   type = string
 }
-#variable "cluster_secondary_range_name" {
-#  description = "The name of the secondary range for the GKE cluster"
-#  type = string
-#}
 
-#variable "services_secondary_range_name" {
-#  description = "The name of the secondary range for the GKE services"
-#  type = string
-#}
+variable "services_secondary_range_name" {
+  description = "The name of the secondary range for the GKE services"
+  type = string
+}
 
