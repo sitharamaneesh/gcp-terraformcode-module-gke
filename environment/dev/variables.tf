@@ -74,4 +74,7 @@ variable "services_ipv4_cidr_block" {
   description = "The name of the secondary range for the GKE services"
   type = string
 }
+variable "database" {}
+variable "database_instance" {}
+variable "tier" {}
 

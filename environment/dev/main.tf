@@ -46,3 +46,11 @@ module "cloud-nat" {
   name       = "nat-config"
 
 }
+
+module "mysql" {
+  source    = "../../modules/mysql"
+  database  = var.database
+  database_instance  = var.database_instance
+  region    = var.region
+  tier      = var.tier
+}
