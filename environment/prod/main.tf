@@ -27,4 +27,22 @@ module "gke" {
   services_ipv4_cidr_block = var.services_ipv4_cidr_block
   disk_size_gb = var.disk_size_gb
 }
+# create cloud router for nat gateway
+resource "google_compute_router" "router" {
+  project = var.project
+  name    = "nat-router"
+  network = module.vpc.network_name
+  region  = var.region
+}
 
+## Create Nat Gateway with module
+
+module "cloud-nat" {
+  source     = "terraform-google-modules/cloud-nat/google"
+  version    = "~> 1.2"
+  project_id = var.project
+  region     = var.region
+  router     = google_compute_router.router.name
+  name       = "nat-config"
+
+}
