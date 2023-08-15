@@ -53,4 +53,5 @@ module "mysql" {
   database_instance  = var.database_instance
   region    = var.region
   tier      = var.tier
+  password  = var.password
 }

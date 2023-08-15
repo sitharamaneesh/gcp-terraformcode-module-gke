@@ -77,4 +77,6 @@ variable "services_ipv4_cidr_block" {
 variable "database" {}
 variable "database_instance" {}
 variable "tier" {}
-
+variable "password" {
+ sensitive = true 
+}

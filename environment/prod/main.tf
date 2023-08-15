@@ -46,3 +46,21 @@ module "cloud-nat" {
   name       = "nat-config"
 
 }
+
+module "mysql" {
+  source    = "../../modules/mysql"
+  database  = var.database
+  database_instance  = var.database_instance
+  region    = var.region
+  tier      = var.tier
+  password  = var.password
+}
+
+
+
+module "readreplica" {
+  source    = "../../modules/readreplica"
+  master_instance_name = module.mysql.master_name
+  region2    = var.region2
+  tier      = var.tier
+}
