@@ -19,4 +19,4 @@ database     = "wordpress_database"
 database_instance  =  "prod-wordpress"
 tier  = "db-f1-micro"
 region2 = "us-central1"
-
+region3 = "us-west1"

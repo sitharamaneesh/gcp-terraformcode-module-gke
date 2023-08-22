@@ -64,3 +64,12 @@ module "readreplica" {
   region2    = var.region2
   tier      = var.tier
 }
+
+
+
+module "readreplica1" {
+  source    = "../../modules/readreplica1"
+  master_instance_name = module.mysql.master_name
+  region3    = var.region3
+  tier      = var.tier
+}
